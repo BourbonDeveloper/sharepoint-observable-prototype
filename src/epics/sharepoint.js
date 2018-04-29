@@ -13,7 +13,7 @@ const headers = {
     'Content-Type': 'application/json; odata=verbose'
 }
 
-export const contextInfoEpic = action$ =>
+export const getContextInfoEpic = action$ =>
   action$.ofType(GET_FORM_DIGEST_VALUE)
     .mergeMap(action =>
         ajax({

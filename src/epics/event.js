@@ -34,17 +34,14 @@ export const addEventToSharePointEpic = action$ =>
               },
               body: JSON.stringify({
                   '__metadata': {'type': getListItemType('Events')},
-                  'Title': action.payload.event.Title
+                  'Title': action.payload.event.Title,
+                  'StartDate': action.payload.event.StartDate
               })
             })
-            /*.map(function(ajaxResponse)
-            {
-                console.log('ajaxResponse', ajaxResponse);
-            })*/
             .map(result => ({ type: GET_EVENTS })
     ))
 
-export const eventEpic = action$ =>
+export const getEventsEpic = action$ =>
     action$.ofType(GET_EVENTS)
       .mergeMap(action =>
           ajax({

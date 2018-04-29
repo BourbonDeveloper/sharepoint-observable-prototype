@@ -3,7 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "lodash.foreach": "^4.5.0",
+    "moment": "^2.22.1",
     "react": "^16.3.2",
+    "react-datepicker": "^0.48.0",
     "react-dom": "^16.3.2",
     "react-redux": "^5.0.7",
     "react-scripts": "1.1.4",

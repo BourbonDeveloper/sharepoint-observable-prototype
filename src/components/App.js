@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { getFormDigestValue } from '../actions/actions';
+import { getFormDigestValue } from '../actions/sharepoint';
 
-import Event from './Event';
+import Calendar from './Calendar';
 
 import '../../node_modules/semantic-ui-css/semantic.min.css'
+import '../../node_modules/react-datepicker/dist/react-datepicker.css'
 
 class App extends React.Component {
   componentDidMount() {
@@ -17,7 +18,9 @@ class App extends React.Component {
     return (
       <div>
       <div>{ FormDigestValue }</div>
-      <Event />
+      <Calendar />
+      <br />
+      
     </div>      
     )
   }

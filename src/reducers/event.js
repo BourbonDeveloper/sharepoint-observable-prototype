@@ -7,8 +7,6 @@ const DEFAULT_STATE = {
 }
 
 const setEvents = (state, action) => {
-    console.log('state', state)
-    console.log('action', action)
     const newState = {}
     Object.assign(newState, state, { Events: action.Events });
     return newState;
