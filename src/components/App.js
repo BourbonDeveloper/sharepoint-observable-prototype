@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getFormDigestValue } from '../actions/sharepoint';
 
-import Calendar from './Calendar';
+import Calendar from './Calendar'; 
 
 import '../../node_modules/semantic-ui-css/semantic.min.css'
 import '../../node_modules/react-datepicker/dist/react-datepicker.css'
