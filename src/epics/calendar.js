@@ -13,9 +13,9 @@ const headers = {
     'Content-Type': 'application/json; odata=verbose'
 }
 
-var getListItemType = (name) => {
+/*var getListItemType = (name) => {
     return 'SP.Data.' + name[0].toUpperCase() + name.substring(1) + 'ListItem'
-}
+}*/
 
 export const getCalendarsEpic = action$ =>
     action$.ofType(GET_CALENDARS)
@@ -25,12 +25,7 @@ export const getCalendarsEpic = action$ =>
               method: 'GET',
               headers
             })
-            .map(function(ajaxResponse)
-            {
-                var sharepointCalendars = ajaxResponse.response.d.results;
-                return sharepointCalendars;
-            })
-            .map(result => ({ type: SET_CALENDARS, Calendars: result })
+            .map(result => ({ type: SET_CALENDARS, Calendars: result.response.d.results })
     ))
 
 

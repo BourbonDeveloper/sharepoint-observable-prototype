@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Button, Dropdown } from 'semantic-ui-react'
 import { getCalendars } from '../actions/calendar'
+import { getExportData } from '../actions/export'
 import Event from './Event';
 import forEach from 'lodash-es/forEach'
 
@@ -11,6 +12,7 @@ class Calendar extends React.Component {
         super();
         this.handleGetCalendarsButtonClick = this.handleGetCalendarsButtonClick.bind(this)
         this.handleCalendarChange = this.handleCalendarChange.bind(this)
+        this.handleGetExportDataButtonClick = this.handleGetExportDataButtonClick.bind(this)
 
         this.state = {
             selectedCalendarId: ''
@@ -28,6 +30,10 @@ class Calendar extends React.Component {
         this.setState({
             selectedCalendarId: data.value
         })
+    }
+    handleGetExportDataButtonClick() {
+        const { dispatch } = this.props;
+        dispatch(getExportData())
     }
     generateCalendarDropdownOptions(Calendars) {
          let keyIndex = 1;
@@ -52,6 +58,7 @@ class Calendar extends React.Component {
   
         return(
             <div>
+                <Button content='Get Export Data' color='red' onClick={() => this.handleGetExportDataButtonClick()} />
                 <div>Hey These are the calendar rows!</div>
                 <Dropdown
                    text='Calendars'

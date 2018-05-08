@@ -5,6 +5,7 @@ import { createEpicMiddleware, combineEpics } from 'redux-observable';
 import { getCalendarsEpic } from './epics/calendar'
 import { getContextInfoEpic } from './epics/sharepoint';
 import { addEventToSharePointEpic, getEventsEpic } from './epics/event';
+import { exportDataReceivedEpic, getExportDataEpic, getFileBufferEpic }  from './epics/export'
 
 import calendarReducer from './reducers/calendar';
 import eventReducer from './reducers/event';
@@ -20,7 +21,10 @@ var rootEpics = combineEpics(
   addEventToSharePointEpic,
   getCalendarsEpic,
   getContextInfoEpic,
-  getEventsEpic
+  getEventsEpic,
+  getExportDataEpic,
+  exportDataReceivedEpic,
+  getFileBufferEpic
 );
 
 const epicMiddleware = createEpicMiddleware(rootEpics);
